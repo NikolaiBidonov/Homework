@@ -15,10 +15,10 @@ public class Numbers {
         if (number1 == number2) {
             System.out.println("Числа равны");
         } else {
-            if (number1 > number2) {
-                System.out.println("Первое число " + number1 + " больше");
+            if (number1 < number2) {
+                System.out.println("Первое число " + number1 + " меньше");
             } else {
-                System.out.println("Второе число " + number2 + " больше");
+                System.out.println("Второе число " + number2 + " меньше");
             }
         }
     }
