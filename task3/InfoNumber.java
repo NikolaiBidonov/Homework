@@ -5,8 +5,12 @@ import java.util.Scanner;
 public class InfoNumber {
     public static void main(String[] args) {
 
-        System.out.print("Введите число ");
         Scanner num = new Scanner(System.in);
+        System.out.print("Введите число ");
+        while (!num.hasNextDouble ()) {
+            System.out.print ("Это не число. Попробуйте снова ");
+            num.next ();
+        }
         double number = num.nextDouble();
 
         if (number > 0 & number % 2 == 0)

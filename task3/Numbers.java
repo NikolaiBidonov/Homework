@@ -5,12 +5,20 @@ import java.util.Scanner;
 public class Numbers {
     public static void main(String[] args) {
 
+
+        Scanner scan = new Scanner (System.in);
         System.out.print("Введите первое число ");
-        Scanner num1 = new Scanner(System.in);
-        double number1 = num1.nextDouble();
+        while (!scan.hasNextDouble ()) {
+            System.out.print ("Это не число. Попробуйте еще раз ");
+            scan.next ();
+        }
+        double number1 = scan.nextDouble();
         System.out.print("Введите второе число ");
-        Scanner num2 = new Scanner(System.in);
-        double number2 = num2.nextDouble();
+        while (!scan.hasNextDouble ()) {
+            System.out.print ("Это не число. Попробуйте еще раз ");
+            scan.next ();
+        }
+        double number2 = scan.nextDouble();
 
         if (number1 == number2) {
             System.out.println("Числа равны");
