@@ -5,12 +5,12 @@ public class App {
 
     public static void main (String[] args) {
 
-        VendingMachine vm = new VendingMachine();
+        VendingMachine vm = new VendingMachine ();
 
-        vm.ShowMenu ();
+        vm.addMoney ();
 
-        vm.AddMoney ();
+        vm.showMenu ();
 
-        vm.ChoiceDrink ();
+        vm.choiceDrink ();
     }
 }
