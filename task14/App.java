@@ -12,13 +12,15 @@ public class App {
         int count = 1;
         float total = 0;
         os.println ("Кассовый чек");
+        os.printf ("%-20s" + "%6s" + "%16s" + "%13s", "Наименование", "Цена", "Количество", "Стоимость");
+        os.println ();
         os.println ("---------------------------------------------------");
 
         while (scanner.hasNext ()) {
             String name = scanner.nextLine();
             float kolichestvo = Float.parseFloat(scanner.nextLine());
             float price = Float.parseFloat(scanner.nextLine());
-            os.printf (count + " %-20s %-10.2f %-10.2f = %.2f\n", name, kolichestvo, price, kolichestvo * price);
+            os.printf (count + " %-20s %-6.2f * %-6.2f = %10.2f\n", name, kolichestvo, price, kolichestvo * price);
             count++;
             total += kolichestvo * price;
         }
