@@ -22,11 +22,13 @@ public class Main {
 
     }
 
-    private static Library loadLibrary () throws IOException, ClassNotFoundException {
+    private static Library loadLibrary () throws ClassNotFoundException {
         try (ObjectInputStream ois = new ObjectInputStream (
                 new FileInputStream (fileName)
         )) {
             return (Library) ois.readObject ();
+        } catch (IOException e) {
+            e.printStackTrace ();
         }
     }
 
