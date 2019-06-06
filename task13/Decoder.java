@@ -1,6 +1,7 @@
 package ru.bidonov.task13;
 
 import java.io.*;
+import java.nio.charset.Charset;
 
 public class Decoder {
     final private static String S = "Задание 13";
@@ -14,12 +15,12 @@ public class Decoder {
             e.printStackTrace ();
         }
         try(FileInputStream inputStream = new FileInputStream(file);
-            FileOutputStream outputStream = new FileOutputStream(dstfile)
+            FileWriter writer = new FileWriter (dstfile)
         ){
             byte[] buffer = new byte[100];
             inputStream.read(buffer, 0, buffer.length);
-            buffer.toString ().getBytes ("GBK");
-            outputStream.write(buffer, 0, buffer.length);
+            String str = new String(buffer, Charset.forName ("GBK"));
+            writer.write (str);
         } catch(IOException e){
             e.printStackTrace ();
         }
