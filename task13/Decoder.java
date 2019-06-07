@@ -15,12 +15,12 @@ public class Decoder {
             e.printStackTrace ();
         }
         try(FileInputStream inputStream = new FileInputStream(file);
-            FileWriter writer = new FileWriter (dstfile)
+            FileOutputStream writer = new FileOutputStream (dstfile)
         ){
             byte[] buffer = new byte[100];
             inputStream.read(buffer, 0, buffer.length);
-            String str = new String(buffer, Charset.forName ("GBK"));
-            writer.write (str);
+            String str = new String(buffer, Charset.forName ("UTF8"));
+            writer.write (str.getBytes ("GBK"));
         } catch(IOException e){
             e.printStackTrace ();
         }
